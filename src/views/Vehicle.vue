@@ -5,7 +5,7 @@
     </div>
     <div v-if="vehicle" class="vehicle__profile">
         <div class="vehicle__image">
-          <div v-if="!paginatedVehicles" class="vehicle__image-spinner spinner startup-spinner"></div>
+          <div class="vehicle__image-spinner spinner startup-spinner"></div>
           <img :src="vehicle.image_url" />
         </div>
         <div class="vehicle__details">
