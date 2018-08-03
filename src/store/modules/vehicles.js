@@ -19,10 +19,10 @@ const actions = {
         if (!resp.ok) {
           throw new Error('Error retrieving cars.json', resp.status, resp.statusText)
         }
-        return resp.text()
+        return resp.json()
       })
       .then(json => {
-        context.commit(SET_VEHICLES, JSON.parse(json))
+        context.commit(SET_VEHICLES, json)
       })
       .catch(err => {
         console.error(err)
