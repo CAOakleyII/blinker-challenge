@@ -40,9 +40,9 @@ export default {
           if (keyword === '') {
             return
           }
-          let makeMatch = false;
-          let modelMatch = false;
-          let yearMatch = false;
+          let makeMatch = false
+          let modelMatch = false
+          let yearMatch = false
           let make = vehicle.make.toLowerCase()
           let model = vehicle.model.toLowerCase()
 
@@ -55,8 +55,8 @@ export default {
             }
           } else {
             makeMatch = true
-          }           
-          
+          }
+
           // check model
           if (keyword !== model) {
             if (model.includes(' ')) {

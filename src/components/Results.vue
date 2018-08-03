@@ -11,7 +11,7 @@
         <input id="rdoSortByYear" type="radio" value="year" v-model="sortby" name="sortby">
         <label for="rdoSortByYear" class="checkmark"> year </label>
       </label>
-      
+
       <label class="results__sortbyOption">
         <input id="rdoSortByMileage" type="radio" value="mileage" v-model="sortby" name="sortby">
         <label for="rdoSortByMileage" class="checkmark"> mileage </label>
@@ -19,8 +19,8 @@
 
       <label class="results__sortbyOption">
         <input id="rdoSortByListing" type="radio" value="listing" v-model="sortby" name="sortby">
-        <label for="rdoSortByListing" class="checkmark"> listing date </label>        
-      </label>      
+        <label for="rdoSortByListing" class="checkmark"> listing date </label>
+      </label>
     </div>
 
     <div class="results__header">
@@ -57,7 +57,7 @@ export default {
     return {
       page: 1,
       size: 15,
-      sortby: "none"
+      sortby: 'none'
     }
   },
   computed: {
@@ -65,33 +65,33 @@ export default {
       if (!this.vehicles) {
         return
       }
-      
+
       let pageSize = this.page * this.size
 
       // if no sorting is needed, just return the list as is for quicker results
-      if (this.sortby === "none") {
+      if (this.sortby === 'none') {
         return this.vehicles.slice(0, pageSize)
       }
-      
+
       // sort the data before doing pagination
-      var sorted = this.vehicles.sort((v1, v2) => {
-          switch (this.sortby) {
-            case "year":
-              return v1.year - v2.year
-            case "mileage":
-              return v2.mileage - v1.mileage
-            case "listing":
-            default:
-              return new Date(v2.created_at) - new Date(v1.created_at)
-          }
-        })
+      var sorted = this.vehicles.slice(0).sort((v1, v2) => {
+        switch (this.sortby) {
+          case 'year':
+            return v1.year - v2.year
+          case 'mileage':
+            return v2.mileage - v1.mileage
+          case 'listing':
+          default:
+            return new Date(v2.created_at) - new Date(v1.created_at)
+        }
+      })
 
       // return the sorted paginated data
       return sorted.slice(0, pageSize)
     }
   },
   methods: {
-    onVehicleClick(vehicle) {
+    onVehicleClick (vehicle) {
       this.$router.push({ name: 'vehicle', params: vehicle })
     },
     nextPage () {
@@ -105,7 +105,7 @@ export default {
 .results {
   color: #ffffff;
   background-color: #2c2c2c;
-  
+
   &__sortby {
     padding: 0 0.4rem 0.4rem 0.4rem;
     font-size: 0.7rem;
@@ -149,7 +149,7 @@ export default {
       cursor: pointer;
     }
   }
-  
+
   &__column {
     width: 25%;
     display: inline-block;

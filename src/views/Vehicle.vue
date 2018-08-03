@@ -2,7 +2,7 @@
   <div class="vehicle">
     <div class="vehicle__search">
       <router-link to="/"> Back to Search </router-link>
-    </div>    
+    </div>
     <div v-if="vehicle" class="vehicle__profile">
         <div class="vehicle__image">
           <div v-if="!paginatedVehicles" class="vehicle__image-spinner spinner startup-spinner"></div>
@@ -42,7 +42,7 @@ export default {
     width: 100%;
   }
 
-  &__image {    
+  &__image {
     margin: auto;
     width: 33%;
     position: relative;
@@ -69,13 +69,13 @@ export default {
     width: 33%;
     margin: auto;
     text-align: center;
-    
+
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     border: 1px solid black;
     border-top: none;
     padding: 15px 0 5px;
-    label {      
+    label {
       display: block;
       max-height: 95vh;
     }
@@ -108,7 +108,7 @@ export default {
       padding-left: 0.4rem;
       text-decoration: none;
       color: #ffffff;
-      &:hover { 
+      &:hover {
         color:#61a8dd;
       }
     }
