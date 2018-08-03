@@ -8,8 +8,8 @@
 
 <script>
 import Search from '@/components/Search.vue'
-import 'whatwg-fetch'
-import { SET_VEHICLES } from '@/store/mutation-types.js'
+
+import { GET_VEHICLES } from '@/store/action-types.js'
 
 export default {
   name: 'home',
@@ -18,19 +18,7 @@ export default {
   },
   methods: {
     getVehicles () {
-      fetch('https://gist.githubusercontent.com/creatifyme/2a334c00a117097bfdb47f031edf292c/raw/efb52ecf1cf92e2261f504ec7639c68b5ff390bd/cars.json')
-        .then(resp => {
-          if (!resp.ok) {
-            throw new Error('Error retrieving cars.json', resp.status, resp.statusText)
-          }
-          return resp.text()
-        })
-        .then(json => {
-          this.$store.commit(SET_VEHICLES, JSON.parse(json))
-        })
-        .catch(err => {
-          console.error(err)
-        })
+      this.$store.dispatch(GET_VEHICLES)
     }
   },
   components: {
