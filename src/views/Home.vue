@@ -44,7 +44,7 @@ export default {
   &__searchbox {
     margin: auto;
     @media only screen and (min-width: 992px) {
-      width: 33%;
+      width: 40%;
     }
     @media only screen and (max-width: 991px) {
       width: 98%;
